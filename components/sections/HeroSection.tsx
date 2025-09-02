@@ -8,7 +8,7 @@ import AnimatedCounter from '../common/AnimatedCounter';
 
 const HeroSection = () => {
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-purple-50 to-cyan-50 pt-12 overflow-hidden">
+    <section id="home" className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-purple-50 to-cyan-50 py-20 overflow-hidden">
       <FlameEffect />
       
       {/* Background Image */}
