@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --brand: #00A86B;
+}
+
+.container {
+  @apply max-w-7xl mx-auto px-6;
+}
+.btn {
+  @apply inline-flex items-center justify-center rounded-xl px-6 py-3 font-semibold transition;
+}
+.btn-primary {
+  @apply bg-[color:var(--brand)] text-white hover:brightness-95;
+}
+.btn-outline {
+  @apply border border-[color:var(--brand)] text-[color:var(--brand)] bg-white hover:bg-green-50;
+}
+.card {
+  @apply rounded-2xl shadow-md bg-white;
+}
+.card-body {
+  @apply p-6;
+}
+.input {
+  @apply rounded-xl px-4 py-3 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500;
+}
