@@ -28,10 +28,10 @@ const Header = () => {
       role="banner"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-auto py-2">
+        <div className="flex justify-between items-center h-auto py-1">
           {/* Logo */}
           <div className="flex-shrink-0">
-           <Image src={"/logo1.png"} alt="Gray GaaS Logo" width={85} height={85} />
+           <Image src={"/logo1.png"} alt="Gray GaaS Logo" width={80} height={80} />
           </div>
 
           {/* Desktop Navigation */}
