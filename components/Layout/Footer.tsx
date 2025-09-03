@@ -2,7 +2,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin, Flame } from 'lucide-react';
-
+import Image from 'next/image';
+import Link from 'next/link';
 const Footer = () => {
   const socialLinks = [
     { icon: Facebook, href: '#', label: 'Facebook' },
@@ -12,7 +13,12 @@ const Footer = () => {
   ];
 
   const quickLinks = [
-    'About Us', 'Our Solution', 'Impact', 'Partners', 'FAQs', 'Contact'
+    { name: 'Home', href: '/' },
+    { name: 'About Us', href: '/about' },
+    { name: 'Our Solution', href: '/#our-solution' },
+    { name: 'How It Works', href: '/#how-it-works' },
+    { name: 'Faqs', href: '/faqs' },
+    { name: 'Contact', href: '/contact' }
   ];
 
   return (
@@ -25,13 +31,12 @@ const Footer = () => {
       role="contentinfo"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* About Gray GaaS */}
           <div className="space-y-4">
-            <div className="text-2xl font-bold bg-gradient-to-r from-purple-400 via-blue-400 to-cyan-400 bg-clip-text text-transparent">
-              <Flame className="inline-block w-6 h-6 mr-2" />
-              Gray GaaS
-            </div>
+            <div className="flex-shrink-0">
+                      <Image src={"/logo1.png"} alt="Gray GaaS Logo" width={85} height={85} />
+                     </div>
             <p className="text-gray-300 text-sm leading-relaxed">
               Revolutionizing clean cooking in Nigeria through innovative Gas-as-a-Service technology. 
               Making LPG accessible, affordable, and sustainable for every household across Nigeria.
@@ -55,13 +60,13 @@ const Footer = () => {
             <h3 className="text-lg font-semibold">Quick Links</h3>
             <div className="space-y-2">
               {quickLinks.map((link) => (
-                <a
-                  key={link}
-                  href={`#${link.toLowerCase().replace(' ', '-')}`}
+                <Link
+                  key={link.name}
+                  href={link.href}
                   className="block text-gray-300 hover:text-purple-400 transition-colors text-sm"
                 >
-                  {link}
-                </a>
+                  {link.name}
+                </Link>
               ))}
             </div>
           </div>
@@ -86,7 +91,7 @@ const Footer = () => {
           </div>
 
           {/* Newsletter */}
-          <div className="space-y-4">
+          {/* <div className="space-y-4">
             <h3 className="text-lg font-semibold">Stay Updated</h3>
             <p className="text-gray-300 text-sm">
               Get the latest updates on clean cooking solutions and sustainability initiatives in Nigeria.
@@ -102,22 +107,22 @@ const Footer = () => {
                 Subscribe
               </button>
             </div>
-          </div>
+          </div> */}
         </div>
 
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm">
-            © 2024 Gray GaaS. All rights reserved. Transforming Nigerian kitchens with clean cooking solutions.
+            © 2025 Gray GaaS. All rights reserved. Transforming Nigerian kitchens with clean cooking solutions.
           </p>
-          <div className="flex space-x-6 mt-4 md:mt-0">
+          {/* <div className="flex space-x-6 mt-4 md:mt-0">
             <a href="#" className="text-gray-400 hover:text-purple-400 text-sm transition-colors">
               Privacy Policy
             </a>
             <a href="#" className="text-gray-400 hover:text-purple-400 text-sm transition-colors">
               Terms of Service
             </a>
-          </div>
+          </div> */}
         </div>
       </div>
     </motion.footer>

@@ -3,18 +3,20 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Menu, X, Flame, ArrowRight } from 'lucide-react';
+import Image from 'next/image';
+import Link from 'next/link';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
-    { name: 'Home', href: '#home' },
-    { name: 'About Us', href: '#about-us' },
-    { name: 'Our Solution', href: '#our-solution' },
-    { name: 'How It Works', href: '#how-it-works' },
-    { name: 'Impact', href: '#impact' },
-    { name: 'Partners', href: '#partners' },
-    { name: 'Contact', href: '#contact' }
+    { name: 'Home', href: '/' },
+    { name: 'About Us', href: '/about' },
+    { name: 'Our Solution', href: '/#our-solution' },
+    { name: 'How It Works', href: '/#how-it-works' },
+    // { name: 'Impact', href : '/#impact' },
+    { name: 'Faqs', href: '/faqs' },
+    { name: 'Contact', href: '/contact' }
   ];
 
   return (
@@ -26,13 +28,10 @@ const Header = () => {
       role="banner"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-auto py-2">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <div className="text-2xl font-bold bg-gradient-to-r from-purple-600 via-blue-600 to-cyan-500 bg-clip-text text-transparent">
-              <Flame className="inline-block w-8 h-8 mr-2" />
-              Gray GaaS
-            </div>
+           <Image src={"/logo1.png"} alt="Gray GaaS Logo" width={85} height={85} />
           </div>
 
           {/* Desktop Navigation */}
@@ -53,17 +52,19 @@ const Header = () => {
 
           {/* CTA Button & Mobile Menu */}
           <div className="flex items-center space-x-4">
-            <motion.button
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.5 }}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="hidden sm:inline-flex px-6 py-2 bg-gradient-to-r from-purple-600 via-blue-600 to-cyan-500 text-white rounded-full font-semibold hover:shadow-lg transition-shadow"
-              aria-label="Get started with Gray GaaS"
-            >
-              Get Started
-            </motion.button>
+            <Link href="/contact">
+              <motion.button
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.5 }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="hidden sm:inline-flex px-6 py-2 bg-gradient-to-r from-purple-600 via-blue-600 to-cyan-500 text-white rounded-full font-semibold hover:shadow-lg transition-shadow"
+                aria-label="Contact Gray GaaS"
+              >
+                Get Started
+              </motion.button>
+            </Link>
             
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -95,9 +96,11 @@ const Header = () => {
                 {item.name}
               </a>
             ))}
-            <button className="w-full mt-4 px-6 py-3 bg-gradient-to-r from-purple-600 via-blue-600 to-cyan-500 text-white rounded-full font-semibold">
-              Get Started
-            </button>
+            <Link href="/contact" className="block w-full">
+              <button className="w-full mt-4 px-6 py-3 bg-gradient-to-r from-purple-600 via-blue-600 to-cyan-500 text-white rounded-full font-semibold">
+                Get Started
+              </button>
+            </Link>
           </div>
         </motion.div>
       )}
