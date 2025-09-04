@@ -2,20 +2,20 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { Send, Mail, Phone, MapPin, Clock, CheckCircle, XCircle } from 'lucide-react';
-import emailjs from '@emailjs/browser';
-// Note: In a real project, you'd install @emailjs/browser with: npm install @emailjs/browser
-// For this demo, we'll simulate the EmailJS functionality
 
-// Contact Form Component with EmailJS
+// Contact Form Component with Custom API
 function ContactForm() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    subject: '',
+    phone: '',
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<'success' | 'error' | null>(null);  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const [submitStatus, setSubmitStatus] = useState<'success' | 'error' | null>(null);
+  const [errorMessage, setErrorMessage] = useState('');
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
@@ -26,31 +26,32 @@ function ContactForm() {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus(null);
+    setErrorMessage('');
 
     try {
-      // In a real project, replace these with your actual EmailJS credentials
-      const serviceId = 'service_pjxnwju';
-      const templateId = 'template_smexuqs';
-      const publicKey = 'F-vvj0qX6ViMiva82';
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
 
-      const templateParams = {
-        from_name: formData.name,
-        from_email: formData.email,
-        subject: formData.subject,
-        message: formData.message,
-        to_name: 'Your Name',
-      };
+      const data = await response.json();
 
-      await emailjs.send(serviceId, templateId, templateParams, publicKey);
-      
-      // Simulate API call for demo
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      
-      setSubmitStatus('success');
-      setFormData({ name: '', email: '', subject: '', message: '' });
+      if (response.ok) {
+        setSubmitStatus('success');
+        setFormData({ name: '', email: '', phone: '', message: '' });
+        console.log('Email sent successfully:', data);
+      } else {
+        setSubmitStatus('error');
+        setErrorMessage(data.error || 'Failed to send message');
+        console.error('API error:', data);
+      }
     } catch (error) {
-      console.error('EmailJS error:', error);
+      console.error('Network error:', error);
       setSubmitStatus('error');
+      setErrorMessage('Network error. Please check your connection and try again.');
     } finally {
       setIsSubmitting(false);
     }
@@ -78,7 +79,9 @@ function ContactForm() {
           className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg flex items-center gap-3"
         >
           <XCircle className="text-red-500 w-5 h-5" />
-          <span className="text-red-700">Failed to send message. Please try again.</span>
+          <span className="text-red-700">
+            {errorMessage || 'Failed to send message. Please try again.'}
+          </span>
         </motion.div>
       )}
 
@@ -117,18 +120,17 @@ function ContactForm() {
         </div>
 
         <div>
-          <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
-            Subject *
+          <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+            Phone Number
           </label>
           <input
-            type="text"
-            id="subject"
-            name="subject"
-            value={formData.subject}
+            type="tel"
+            id="phone"
+            name="phone"
+            value={formData.phone}
             onChange={handleChange}
-            required
             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
-            placeholder="How can we help you?"
+            placeholder="08023135665"
           />
         </div>
 
@@ -149,12 +151,13 @@ function ContactForm() {
         </div>
 
         <motion.button
+          type="button"
           onClick={handleSubmit}
-          disabled={isSubmitting || !formData.name || !formData.email || !formData.subject || !formData.message}
+          disabled={isSubmitting || !formData.name || !formData.email || !formData.message}
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
           className={`w-full flex items-center justify-center gap-3 px-8 py-4 rounded-lg font-semibold text-white transition-all duration-200 ${
-            isSubmitting || !formData.name || !formData.email || !formData.subject || !formData.message
+            isSubmitting || !formData.name || !formData.email || !formData.message
               ? 'bg-gray-400 cursor-not-allowed'
               : 'bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 shadow-lg hover:shadow-xl'
           }`}
@@ -186,14 +189,14 @@ function ContactInfo() {
     {
       icon: Mail,
       title: 'Email',
-      info: 'hello@company.com',
-      link: 'mailto:hello@company.com'
+      info: 'info@graygaas.com',
+      link: 'mailto:info@graygaas.com'
     },
     {
       icon: Phone,
       title: 'Phone',
-      info: '+1 (555) 123-4567',
-      link: 'tel:+15551234567'
+      info: '08023135665',
+      // link: 'tel:+15551234567'
     },
     {
       icon: MapPin,
