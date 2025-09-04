@@ -10,27 +10,27 @@ import Image from 'next/image';
 export default function TeamSection() {
   const team = [
     { 
-      name: "Adunni Sanni", 
+      name: "O Onuchukwu", 
       role: "CEO & Founder", 
-      image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=500", 
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=500", 
       linkedin: "#" 
     },
     { 
-      name: "Kemi Adebayo", 
+      name: "A F Osasona", 
       role: "Operations Director", 
-      image: "https://images.unsplash.com/photo-1589156280159-27698a70f29e?auto=format&fit=crop&q=80&w=500", 
+      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=500", 
       linkedin: "#" 
     },
     { 
-      name: "Tunde Okafor", 
-      role: "Technology Lead", 
-      image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=500", 
+      name: "C Ezigwe", 
+      role: "CFO", 
+      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=500", 
       linkedin: "#" 
     },
     { 
-      name: "Fatima Hassan", 
-      role: "Community Relations", 
-      image: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&q=80&w=500", 
+      name: "I Onuchukwu", 
+      role: "CTO", 
+      image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=500", 
       linkedin: "#" 
     }
   ];

@@ -12,14 +12,14 @@ const contactDetails = [
   {
     icon: MapPinIcon,
     title: 'Visit Us',
-    content: '123 Business Ave, Suite 100\nSan Francisco, CA 94105',
-    link: 'https://maps.google.com/?q=123+Business+Ave+San+Francisco+CA'
+    content: '9B Christ Avenue, Lekki Phase 1',
+    link: 'https://maps.google.com/?q=9B+Christ+Avenue,+Lekki+Phase+1'
   },
   {
     icon: PhoneIcon,
     title: 'Call Us',
-    content: '+1 (555) 123-4567',
-    link: 'tel:+15551234567'
+    content: '08023135665',
+    link: 'tel:08023135665'
   },
   {
     icon: EnvelopeIcon,

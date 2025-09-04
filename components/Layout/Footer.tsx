@@ -85,7 +85,8 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin size={18} className="text-cyan-400" />
-                <span className="text-gray-300 text-sm">Lagos, Nigeria</span>
+                <span className="text-gray-300 text-sm">9B Christ Avenue, Lekki Phase 1
+</span>
               </div>
             </div>
           </div>

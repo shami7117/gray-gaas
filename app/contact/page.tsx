@@ -201,7 +201,7 @@ function ContactInfo() {
     {
       icon: MapPin,
       title: 'Address',
-      info: '123 Business St, Suite 100\nCity, State 12345',
+      info: '9B Christ Avenue, Lekki Phase 1',
       link: 'https://maps.google.com'
     },
     {
