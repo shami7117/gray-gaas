@@ -12,25 +12,25 @@ export default function TeamSection() {
     { 
       name: "O Onuchukwu", 
       role: "CEO & Founder", 
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=500", 
+      image: "/O_Onuchukwu.jpg", 
       linkedin: "#" 
     },
     { 
       name: "A F Osasona", 
       role: "Operations Director", 
-      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=500", 
+      image: "/Osasona.png", 
       linkedin: "#" 
     },
     { 
-      name: "C Ezigwe", 
+      name: "C Ezeigwe", 
       role: "CFO", 
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=500", 
+      image: "/Ezeigwe.png", 
       linkedin: "#" 
     },
     { 
       name: "I Onuchukwu", 
       role: "CTO", 
-      image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=500", 
+      image: "/Onuchukwu.jpg", 
       linkedin: "#" 
     }
   ];

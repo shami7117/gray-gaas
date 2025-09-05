@@ -17,49 +17,49 @@ const PartnersSection: React.FC = () => {
       name: "Techno Oil", 
       category: "LPG Supplier",
       description: "Leading petroleum products distributor",
-      logo: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=80&h=80&fit=crop"
+      logo: "https://images.unsplash.com/photo-1517292987719-0369a794ec0f?w=80&h=80&fit=crop"
     },
     { 
       name: "Banner Gas", 
       category: "Gas Infrastructure",
       description: "Gas distribution and infrastructure",
-      logo: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=80&h=80&fit=crop"
+      logo: "https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=80&h=80&fit=crop"
     },
     { 
       name: "NIPCO", 
       category: "Energy Solutions",
       description: "Integrated energy solutions provider",
-      logo: "https://images.unsplash.com/photo-1497436072909-f5e4be1707e1?w=80&h=80&fit=crop"
+      logo: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=80&h=80&fit=crop"
     },
     { 
       name: "Rainoil", 
       category: "Petroleum Products",
       description: "Downstream petroleum operations",
-      logo: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=80&h=80&fit=crop"
+      logo: "https://images.unsplash.com/photo-1542744094-3a31f272c490?w=80&h=80&fit=crop"
     },
     { 
       name: "Gold Standard", 
       category: "Carbon Credits",
       description: "Global standard for climate projects",
-      logo: "https://images.unsplash.com/photo-1569163139394-de4e5f43e4e3?w=80&h=80&fit=crop"
+      logo: "https://images.unsplash.com/photo-1621768216002-5ac171876625?w=80&h=80&fit=crop"
     },
     { 
       name: "Wuxi Zhongyi", 
       category: "Technology",
       description: "IoT and smart metering solutions",
-      logo: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=80&h=80&fit=crop"
+      logo: "https://images.unsplash.com/photo-1535378917042-10a22c95931a?w=80&h=80&fit=crop"
     },
     { 
       name: "FinTech Partners", 
       category: "Financial Services",
       description: "Digital payment solutions",
-      logo: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=80&h=80&fit=crop"
+      logo: "https://images.unsplash.com/photo-1618044733300-9472054094ee?w=80&h=80&fit=crop"
     },
     { 
       name: "NGO Coalition", 
       category: "Social Impact",
       description: "Community development partners",
-      logo: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=80&h=80&fit=crop"
+      logo: "https://images.unsplash.com/photo-1562577309-4932fdd64cd1?w=80&h=80&fit=crop"
     }
   ];
 
